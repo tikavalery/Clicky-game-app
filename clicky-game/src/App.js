@@ -1,49 +1,109 @@
-import React, { Component } from "react";
-import Square from "./components/square";
-import "./App.css";
-import princess from "./princess.json"
+import React, { Component } from 'react';
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import Main from "./components/Main";
+import Footer from "./components/Footer";
+import Image from "./components/Image";
+import Img from "./components/Img.json"
+
+//image imports
+import contra from "./images/contra.gif"
+import dance from "./images/dance.gif"
+import donkeykong from "./images/donkeykong.gif"
+import duckhunt from "./images/duckhunt.gif"
+import kirby from "./images/kirby.gif"
+import kirbystarhighfive from "./images/kirbystarhighfive.gif"
+import marioextraspin from "./images/marioextraspin.gif"
+import marioworld from "./images/marioworld.gif"
+import toad from "./images/toad.gif"
+import waluigi from "./images/waluigi.gif"
+import zelda from "./images/zelda.gif"
+import koopa from "./images/koopa.gif"
+
+import './App.css';
 
 class App extends Component {
   state = {
-    princess: princess
+    picked: [],
+    correct: 0,
+    topscore: 0,
+    message: 'Click an image to begin'
+  };
+
+//Shuffle Array
+  shuffleArray = (array) => {
+    let imgArray = Img;
+    for (let i = imgArray.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [imgArray[i], imgArray[j]] = [imgArray[j], imgArray[i]];
+    }
+    return imgArray
   }
 
-  score = 0;
-  highScore = 0;
-
-
-  _nextRound = () => {
-    return princess.reverse();
+  pickImg = (name) => {
+    console.log("Clicked!!");
+    let picked = this.state.picked;
+    
+    if (picked.indexOf(name) === -1) {
+      this.setState({
+        picked: picked.concat(name),
+        correct: this.state.correct + 1,
+        topscore: this.state.correct + 1 > this.state.topscore ? this.state.correct + 1 : this.state.topscore,
+        message: "Correct: Good choice!" 
+      })
+      this.shuffleArray();
+    }
+    else {
+      this.setState({
+        message: "Already Selected Game Over, Replay?",
+        correct: 0,
+        picked: []
+      })
+    }
   }
 
-  _playGame = () => {
-
+  imgSwitch = (name) => {
+    switch (name) {
+      case "contra":
+        return `${contra}`
+      case "dance":
+        return `${dance}`
+      case "donkeykong":
+        return `${donkeykong}`
+      case "duckhunt":
+        return `${duckhunt}`
+      case "kirby":
+        return `${kirby}`
+      case "kirbystarhighfive":
+        return `${kirbystarhighfive}`
+      case "marioextraspin":
+        return `${marioextraspin}`
+      case "marioworld":
+        return `${marioworld}`
+      case "toad":
+        return `${toad}`
+      case "waluigi":
+        return `${waluigi}`
+      case "zelda":
+        return `${zelda}`
+      case "koopa":
+        return `${koopa}`
+      default:
+        return `${koopa}`
+    }
   }
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Clicky Game <i className="fas fa-chess-queen"></i></h1>
-        </header>
-        {/* {this.state.princess.map(princess => (<Square key = {princess.id} name = {princess.name} image = {princess.image}/>))} */}
-      <div className = "Container">
-        <Square name = {this.state.princess[0].name} image = {this.state.princess[0].image}/>
-        <Square name = {this.state.princess[1].name} image = {this.state.princess[1].image}/>
-        <Square name = {this.state.princess[2].name} image = {this.state.princess[2].image}/>
-        <Square name = {this.state.princess[3].name} image = {this.state.princess[3].image}/>
-        <p className = 'clearfix'></p>
-        <Square name = {this.state.princess[4].name} image = {this.state.princess[4].image}/>
-        <Square name = {this.state.princess[5].name} image = {this.state.princess[5].image}/>
-        <Square name = {this.state.princess[6].name} image = {this.state.princess[6].image}/>
-        <Square name = {this.state.princess[7].name} image = {this.state.princess[7].image}/>
-        <p className = 'clearfix'></p>
-        <Square name = {this.state.princess[8].name} image = {this.state.princess[8].image}/>
-        <Square name = {this.state.princess[9].name} image = {this.state.princess[9].image}/>
-        <Square name = {this.state.princess[10].name} image = {this.state.princess[10].image}/>
-        <Square name = {this.state.princess[11].name} image = {this.state.princess[11].image}/>
-        <p className = 'clearfix'></p>
-      </div>
+      <div>
+        <Navbar correct={this.state.correct} topscore={this.state.topscore} message={this.state.message}/>
+        <Header />
+        <Main>
+          {this.shuffleArray(Img).map(image => (
+            <Image src={this.imgSwitch(image.name)} name={image.name} key={image.name} pickImg={this.pickImg}  />
+          ))}
+        </Main>
+        <Footer />
       </div>
     );
   }
