@@ -7,18 +7,18 @@ import Image from "./components/Image";
 import Img from "./components/Img.json"
 
 //image imports
-import contra from "./images/contra.gif"
-import dance from "./images/dance.gif"
-import donkeykong from "./images/donkeykong.gif"
-import duckhunt from "./images/duckhunt.gif"
-import kirby from "./images/kirby.gif"
-import kirbystarhighfive from "./images/kirbystarhighfive.gif"
-import marioextraspin from "./images/marioextraspin.gif"
-import marioworld from "./images/marioworld.gif"
-import toad from "./images/toad.gif"
-import waluigi from "./images/waluigi.gif"
-import zelda from "./images/zelda.gif"
-import koopa from "./images/koopa.gif"
+import ninja from "./images/ninja.jpg"
+import starwar from "./images/starwar.png"
+import starwar2 from "./images/starwar2.jpg"
+import starwar3 from "./images/starwar3.jpg"
+import ninja2 from "./images/ninja2.jpg"
+import ninja3 from "./images/ninja3.jpg"
+import voodoo from "./images/voodoo.jpg"
+import juju1 from "./images/juju1.jpg"
+import juju2 from "./images/juju2.jpg"
+import juju3 from "./images/juju3.jpg"
+import kimbo from "./images/kimbo.jpg"
+import kimbo2 from "./images/kimbo2.jpg"
 
 import './App.css';
 
@@ -33,10 +33,13 @@ class App extends Component {
 //Shuffle Array
   shuffleArray = (array) => {
     let imgArray = Img;
+  
     for (let i = imgArray.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
       [imgArray[i], imgArray[j]] = [imgArray[j], imgArray[i]];
+     
     }
+
     return imgArray
   }
 
@@ -64,32 +67,32 @@ class App extends Component {
 
   imgSwitch = (name) => {
     switch (name) {
-      case "contra":
-        return `${contra}`
-      case "dance":
-        return `${dance}`
-      case "donkeykong":
-        return `${donkeykong}`
-      case "duckhunt":
-        return `${duckhunt}`
-      case "kirby":
-        return `${kirby}`
-      case "kirbystarhighfive":
-        return `${kirbystarhighfive}`
-      case "marioextraspin":
-        return `${marioextraspin}`
-      case "marioworld":
-        return `${marioworld}`
-      case "toad":
-        return `${toad}`
-      case "waluigi":
-        return `${waluigi}`
-      case "zelda":
-        return `${zelda}`
-      case "koopa":
-        return `${koopa}`
+      case "ninja":
+        return `${ninja}`
+      case "starwar":
+        return `${starwar}`
+      case "starwar2":
+        return `${starwar2}`
+      case "starwar3":
+        return `${starwar3}`
+      case "ninja2":
+        return `${ninja2}`
+      case "ninja3":
+        return `${ninja3}`
+      case "voodoo":
+        return `${voodoo}`
+      case "juju1":
+        return `${juju1}`
+      case "juju2":
+        return `${juju2}`
+      case "juju3":
+        return `${juju3}`
+      case "kimbo":
+        return `${kimbo}`
+      case "kimbo2":
+        return `${kimbo2}`
       default:
-        return `${koopa}`
+        return `${kimbo2}`
     }
   }
 

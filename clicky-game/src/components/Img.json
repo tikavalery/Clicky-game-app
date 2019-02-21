@@ -1,48 +1,48 @@
 [{
-  "name": "contra",
-  "url": "./images/ninja-turtle.jpg"
+  "name": "ninja",
+  "url": "./images/ninja.jpg"
 },
 {
-  "name": "dance",
-  "url": "./images/dance.jpg"
+  "name": "starwar",
+  "url": "./images/starwar.png"
 },
 {
-  "name": "donkeykong",
-  "url": "./images/donkeykong.jpg"
+  "name": "starwar2",
+  "url": "./images/starwar2.jpg"
 },
 {
-  "name": "duckhunt",
-  "url": "./images/duckhunt.jpg"
+  "name": "starwar3",
+  "url": "./images/starwar3.jpg"
 },
 {
-  "name": "kirby",
-  "url": "./images/kirby.jpg"
+  "name": "ninja2",
+  "url": "./images/ninja2.jpg"
 },
 {
-  "name": "kirbystarhighfive",
-  "url": "./images/kirbystarhighfive.jpg"
+  "name": "ninja3",
+  "url": "./images/ninja3.jpg"
 },
 {
-  "name": "marioextraspin",
-  "url": "./images/marioextraspin.jpg"
+  "name": "voodoo",
+  "url": "./images/voodoo.jpg"
 },
 {
-  "name": "marioworld",
-  "url": "./images/marioworld.jpg"
+  "name": "juju1",
+  "url": "./images/juju1.jpg"
 },
 {
-  "name": "toad",
-  "url": "./images/toad.jpg"
+  "name": "juju2",
+  "url": "./images/juju2.jpg"
 },
 {
-  "name": "waluigi",
-  "url": "./images/waluigi.jpg"
+  "name": "juju3",
+  "url": "./images/juju3.jpg"
 },
 {
-  "name": "zelda",
-  "url": "./images/zelda.jpg"
+  "name": "kimbo",
+  "url": "./images/kimbo.jpg"
 },
 {
-  "name": "koopa",
-  "url": "./images/koopa.jpg"
+  "name": "kimbo2",
+  "url": "./images/kimbo2.jpg"
 }]
